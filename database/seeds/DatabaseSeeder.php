@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+// run command -> php artisan db:seed
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // Todo作成
+        $this->call(TodosSeeder::class);
     }
 }
