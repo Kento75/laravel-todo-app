@@ -19,7 +19,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <a class="nav-link" href="/todos">Todos <span class="sr-only">(current)</span></a>
+            <a href="/todos" class="nav-link">Todos <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+            <a href="/new-todos" class="nav-link">Create todos <span class="sr-only">(current)</span></a>
         </li>
     </ul>
     </div>
