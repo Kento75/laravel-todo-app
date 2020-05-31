@@ -24,3 +24,7 @@ Route::get('todos/{todo}', 'TodosController@show');
 Route::get('new-todos', 'TodosController@create');
 // 記事投稿
 Route::post('store-todos', 'TodosController@store');
+// 記事更新フォームページ
+Route::get('todos/{todo}/edit', 'TodosController@edit');
+// 記事更新
+Route::post('todos/{todo}/update-todos', 'TodosController@update');
