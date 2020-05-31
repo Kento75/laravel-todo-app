@@ -15,9 +15,9 @@ class TodosController extends Controller
     }
 
     // 記事詳細ページ
-    public function show($todoId)
+    public function show(Todo $todo)
     {
-        return view('todos.show')->with('todo', Todo::find($todoId));
+        return view('todos.show')->with('todo', $todo);
     }
 
     // 記事投稿フォームページ
@@ -47,15 +47,13 @@ class TodosController extends Controller
     }
 
     // 記事更新フォームページ
-    public function edit($todoId)
+    public function edit(Todo $todo)
     {
-        $todo = Todo::find($todoId);
-
         return view('todos.edit')->with('todo', $todo);
     }
 
     // 記事更新
-    public function update($todoId)
+    public function update(Todo $todo)
     {
         $this->validate(request(), [
             'name' => 'required | min:6 | max:12',
@@ -64,8 +62,6 @@ class TodosController extends Controller
 
         $data = request()->all();
 
-        $todo = Todo::find($todoId);
-
         $todo->name = $data['name'];
         $todo->description = $data['description'];
         $todo->save();
@@ -73,10 +69,8 @@ class TodosController extends Controller
         return redirect('/todos');
     }
 
-    public function destroy($todoId)
+    public function destroy(Todo $todo)
     {
-        $todo = Todo::find($todoId);
-
         $todo->delete();
 
         return redirect('/todos');
