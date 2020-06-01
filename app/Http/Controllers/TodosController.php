@@ -73,11 +73,23 @@ class TodosController extends Controller
         return redirect('/todos');
     }
 
+    // 記事削除
     public function destroy(Todo $todo)
     {
         $todo->delete();
 
         session()->flash('success', 'Todo deleted successfully.');
+
+        return redirect('/todos');
+    }
+
+    // 記事購読
+    public function complete(Todo $todo)
+    {
+        $todo->completed = true;
+        $todo->save();
+
+        session()->flash('success', 'Todo completed successfully.');
 
         return redirect('/todos');
     }

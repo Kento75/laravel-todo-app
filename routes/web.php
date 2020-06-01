@@ -33,3 +33,6 @@ Route::post('todos/{todo}/update-todos', 'TodosController@update');
 
 // 記事削除
 Route::get('todos/{todo}/delete', 'TodosController@destroy');
+
+// 記事既読
+Route::get('todos/{todo}/complate', 'TodosController@complete');
